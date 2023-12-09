@@ -31,9 +31,7 @@ WGPUSurface SDL_WGPU_CreateSurface(WGPUInstance instance, SDL_Window * window)
 
             return wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
         }
-#endif
-
-#ifdef SDL_VIDEO_DRIVER_WAYLAND
+#elif SDL_VIDEO_DRIVER_WAYLAND
     case SDL_SYSWM_X11:
         {
             WGPUSurfaceDescriptorFromWaylandSurface surfaceDescriptorFromWaylandSurface;
